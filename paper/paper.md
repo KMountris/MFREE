@@ -67,8 +67,8 @@ $$
 
 where the polynomial basis $\mathbf{p}_I$ for point $I$ and matrices $\mathbf{A}$ and $\mathbf{B}$ are defined as follows. 
 
-For any point $i$ in the support domain of point $I$ with coordinates $\mathbf{x}_i = \left( x_i, y_i \right)$ in 2D (analogously for 1D and 3D), the complete polynomial basis 
-\mathbf{p}_i$ is given by:
+For any point $i$ in the support domain of point $I$ with coordinates $\mathbf{x}_i = \left( x_i, y_i \right)$ in 2D (analogously for 1D and 3D), the complete polynomial basis
+$\mathbf{p}_i$ is given by:
 
 \begin{equation} \label{eq:poly_basis}
    \mathbf{p}_i = \left[ 1 \; x_i \; y_i \; x_i^2 \; x_i y_i \; y_i^2 \hdots \; x_i^k \; y_i^k \right].
@@ -105,7 +105,7 @@ where $\mathbf{P}$ is the polynomial basis moment matrix:
 \end{equation}
 
 $\mathbf{W}$ is the weight function moment matrix:
-\begin{equation}
+$$
     \mathbf{W} = \left[
              \begin{matrix}
                 w_{11} & w_{12} & \hdots & w_{1m}\\
@@ -114,7 +114,7 @@ $\mathbf{W}$ is the weight function moment matrix:
                 w_{m1} & w_{m2} & \hdots & w_{mm}\\
                 \end{matrix}
                 \right]_{(m \cross m)}.
-\end{equation}
+$$
 
 ## Radial Point Interpolation 
 
