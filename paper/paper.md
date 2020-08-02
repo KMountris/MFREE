@@ -48,9 +48,9 @@ implementation of meshfree packages that serves to support the integration of MM
 
 For any real-valued function $u(\textbf{x})$ defined in a domain $\Omega \subset \mathbb{R}^d$, a meshfree approximation $u^h(\textbf{x})$ at a point $I \in \Omega$ is obtained by:
 
-\begin{equation}
+$$
     u^h(\textbf{x}_I) = \sum_{i=1}^m \phi_I^i u(\textbf{x}_i)
-\end{equation}
+$$
 
 where $\textbf{x}_I$ and $\textbf{x}_i$ are the coordinates vectors of the point $I$ and the $i^{th}$ point ($i=1,2,\dots,m$) in the support domain of point $I$ (being I one of these
 points). $\phi_I^i$ is the value of the meshfree approximation function $\textbf{\phi}_I$ at point $i$. In the following, we briefly describe the construction of $\textbf{\phi}_I$ in
@@ -61,9 +61,9 @@ at all points $i$ in the support domain of point $I$.
 
 In the Moving Least Squares (MLS) scheme [@lancaster:1981], the meshfree approximation function $\textbf{\phi}_I$ for point $I$ is given by:
 
-\begin{equation}
+$$
     \textbf{\phi}_I = \textbf{p}_I \textbf{A}^{-1} \textbf{B},
-\end{equation}
+$$
 
 where the polynomial basis $\textbf{p}_I$ for point $I$ and matrices $\textbf{A}$ and $\textbf{B}$ are defined as follows. 
 
@@ -85,12 +85,12 @@ where $k$ is the maximal order of the monomials in $\textbf{p}_i$. Let's denote 
 \end{equation}
 
 The matrices $\textbf{A}$ and $\textbf{B}$ are given by:
-\begin{equation}
+$$
 \begin{array}{ll}
     \textbf{A} &= \textbf{P}^T\textbf{W}\textbf{P}, \\
     \textbf{B} &= \textbf{P}^T\textbf{W},
 \end{array}
-\end{equation}
+$$
 
 where $\textbf{P}$ is the polynomial basis moment matrix:
 \begin{equation} \label{eq:poly_moment}
@@ -120,30 +120,30 @@ $\textbf{W}$ is the weight function moment matrix:
 
 In the Radial Point Interpolation (RPI) scheme [@liu:2002], the meshfree approximation function $\textbf{\phi}_I$ for point $I$ is given by:
 
-\begin{equation}
+$$
     \textbf{\phi}_I = \{ \textbf{r}_I \; \; \textbf{p}_I\} \textbf{G}^{-1},
-\end{equation}
+$$
 
 where $\textbf{p}_I$ is the polynomial basis as defined from equation (\ref{eq:poly_basis}). For any point $i$ in the support domain of point $I$, $\textbf{r}_i$ denotes the radial basis function vector given by:
 
-\begin{equation}
+$$
     \textbf{r}_i = \left[ r_{i1} \; r_{i2} \; \dotso \; r_{im} \right],
-\end{equation}
+$$
 
 where $r_{ij}$, $i,j= 1,2,\dots,m$, is the value of the radial basis function $r_i$ for point $i$ evaluated at point $j$, i.e. $r_{ij} = r_i(\textbf{x}_j)$. For common choices of radial basis functions, see [@liu:2002].
 
 The matrix $\textbf{G}$ is given by:
-\begin{equation}
+$$
     \textbf{G} = \left[
              \begin{matrix}
                 \textbf{R}   & \textbf{P}\\
                 \textbf{P}^T & \textbf{0}
                 \end{matrix}
                 \right]_{(m+n \cross m+n)},
-\end{equation}
+$$
 
 where $\textbf{P}$ is the polynomial basis moment matrix defined as in equation (\ref{eq:poly_moment}) and $\textbf{R}$ is the radial basis function moment matrix:
-\begin{equation}
+$$
     \textbf{R} = \left[
              \begin{matrix}
                 r_{11} & r_{12} & \hdots & r_{1m}\\
@@ -152,7 +152,7 @@ where $\textbf{P}$ is the polynomial basis moment matrix defined as in equation 
                 r_{m1} & r_{m2} & \hdots & r_{mm}\\
                 \end{matrix}
                 \right]_{(m \cross m)}.
-\end{equation}
+$$
 
 ## Moving Kriging Interpolation
 
@@ -162,9 +162,9 @@ $$\textbf{\phi}_I = \textbf{p}_I\textbf{A} + \textbf{c}_I\textbf{B}$$
 
 where $\textbf{p}_I$ is the polynomial basis as defined from equation (\ref{eq:poly_basis}). For any point $i$ in the support domain of point $I$, $\textbf{c}_I$ denotes the correlation function vector given by:
 
-\begin{equation}
+$$
     \textbf{c}_i = \left[ c_{i1} \; c_{i2} \; \dotso \; c_{im} \right]
-\end{equation}
+$$
 
 where $c_{ij}$, $i,j=1,2,\dots,m$, is the value of the correlation function $c_i$ for point $i$ evaluated at point $j$, i.e. $c_{ij} = c_i(\textbf{x}_j)$. For common choices of correlation functions, see [@gu:2003].
 
@@ -179,7 +179,7 @@ The matrices $\textbf{A}$ and $\textbf{B}$ are obtained by:
 
 where $\textbf{I}$ is the identity matrix, $\textbf{P}$ is the polynomial basis moment matrix defined as in equation (\ref{eq:poly_moment}) and $\textbf{C}$ is the correlation function moment matrix:
 
-\begin{equation}
+$$
     \textbf{C} = \left[
              \begin{matrix}
                 c_{11} & c_{12} & \hdots & c_{1m}\\
@@ -188,7 +188,7 @@ where $\textbf{I}$ is the identity matrix, $\textbf{P}$ is the polynomial basis 
                 c_{m1} & c_{m2} & \hdots & c_{mm}\\
                 \end{matrix}
                 \right]_{(m \cross m)}.
-\end{equation}
+$$
 
 # Program structure
 
