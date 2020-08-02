@@ -94,26 +94,26 @@ $$
 
 where $\mathbf{P}$ is the polynomial basis moment matrix:
 \begin{equation} \label{eq:poly_moment}
-    \mathbf{P} = [
+    \mathbf{P} = \left[
              \begin{matrix}
                 1 & x_1 & y_1 & \hdots & p_k(\mathbf{x}_1)\\
                 1 & x_2 & y_2 & \hdots & p_k(\mathbf{x}_2)\\
                 \hdots & \hdots & \hdots & \hdots & \hdots\\
                 1 & x_m & y_m & \hdots & p_k(\mathbf{x}_m)\\
                 \end{matrix}
-                ],
+                ]\right,
 \end{equation}
 
 $\mathbf{W}$ is the weight function moment matrix:
 $$
-    \mathbf{W} = [
+    \mathbf{W} = \left[
              \begin{matrix}
                 w_{11} & w_{12} & \hdots & w_{1m}\\
                 w_{21} & w_{22} & \hdots & w_{2m}\\
                 \hdots & \hdots & \hdots & \hdots\\
                 w_{m1} & w_{m2} & \hdots & w_{mm}\\
                 \end{matrix}
-                ].
+                ]\right.
 $$
 
 ## Radial Point Interpolation 
@@ -134,24 +134,24 @@ where $r_{ij}$, $i,j= 1,2,\dots,m$, is the value of the radial basis function $r
 
 The matrix $\mathbf{G}$ is given by:
 $$
-    \mathbf{G} = [
+    \mathbf{G} = \left[
              \begin{matrix}
                 \mathbf{R}   & \mathbf{P}\\
                 \mathbf{P}^T & \mathbf{0}
                 \end{matrix}
-                ],
+                ]\right,
 $$
 
 where $\mathbf{P}$ is the polynomial basis moment matrix defined as in equation (\ref{eq:poly_moment}) and $\mathbf{R}$ is the radial basis function moment matrix:
 $$
-    \mathbf{R} = [
+    \mathbf{R} = \left[
              \begin{matrix}
                 r_{11} & r_{12} & \hdots & r_{1m}\\
                 r_{21} & r_{22} & \hdots & r_{2m}\\
                 \hdots & \hdots & \hdots & \hdots\\
                 r_{m1} & r_{m2} & \hdots & r_{mm}\\
                 \end{matrix}
-                ].
+                ]\right.
 $$
 
 ## Moving Kriging Interpolation
@@ -180,14 +180,14 @@ The matrices $\mathbf{A}$ and $\mathbf{B}$ are obtained by:
 where $\mathbf{I}$ is the identity matrix, $\mathbf{P}$ is the polynomial basis moment matrix defined as in equation (\ref{eq:poly_moment}) and $\mathbf{C}$ is the correlation function moment matrix:
 
 $$
-    \mathbf{C} = [
+    \mathbf{C} = \left[
              \begin{matrix}
                 c_{11} & c_{12} & \hdots & c_{1m}\\
                 c_{21} & c_{22} & \hdots & c_{2m}\\
                 \hdots & \hdots & \hdots & \hdots\\
                 c_{m1} & c_{m2} & \hdots & c_{mm}\\
                 \end{matrix}
-                ].
+                ]\right.
 $$
 
 # Program structure
@@ -220,7 +220,7 @@ The subfolder *weights* contains the implementation of various weight functions,
 
 # Examples
 
-The programs *test_1D.m*, *test_2D.m*, *test_3D.m* provide examples of how to use the `MFREE` toolkit for 1D, 2D and 3D problems, respectively. In these programs, the basis functions and the first derivatives of the meshfree function approximations (MLS, RPI, MKI) are compared. An illustration for the 1D case is given in Figure \autoref{fig:mfree_comp}. In this example, the MLS approximation is computed using the quartic spline as weight function. The multiquadric radial basis function and the Gaussian function are used as radial basis function and correlation function, respectively, for the computation of the RPI and MKI approximations. All the approximations are computed using the linear polynomial basis ($k=1$).
+The programs *test_1D.m*, *test_2D.m*, *test_3D.m* provide examples of how to use the `MFREE` toolkit for 1D, 2D and 3D problems, respectively. In these programs, the basis functions and the first derivatives of the meshfree function approximations (MLS, RPI, MKI) are compared. An illustration for the 1D case is given in \autoref{fig:mfree_comp}. In this example, the MLS approximation is computed using the quartic spline as weight function. The multiquadric radial basis function and the Gaussian function are used as radial basis function and correlation function, respectively, for the computation of the RPI and MKI approximations. All the approximations are computed using the linear polynomial basis ($k=1$).
 
 ![Meshfree approximation functions for point $I$. The approximation function (panel (a)) and its first order derivative (panel (b)) are shown for the MLS, RPI and MKI meshfree approximation schemes.\label{fig:mfree_comp}](figure.png)
 
