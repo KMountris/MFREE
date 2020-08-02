@@ -67,7 +67,7 @@ $$
 
 where the polynomial basis $\mathbf{p}_I$ for point $I$ and matrices $\mathbf{A}$ and $\mathbf{B}$ are defined as follows. 
 
-For any point $i$ in the support domain of point $I$ with coordinates $\mathbf{x}_i = \left( x_i, y_i )\right$ in 2D (analogously for 1D and 3D), the complete polynomial basis
+For any point $i$ in the support domain of point $I$ with coordinates $\mathbf{x}_i = \left( x_i, y_i \right)$ in 2D (analogously for 1D and 3D), the complete polynomial basis
 $\mathbf{p}_i$ is given by:
 
 \begin{equation} \label{eq:poly_basis}
