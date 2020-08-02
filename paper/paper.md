@@ -151,7 +151,7 @@ $$
                 \hdots & \hdots & \hdots & \hdots\\
                 r_{m1} & r_{m2} & \hdots & r_{mm}\\
                 \end{matrix}
-                \right]_{(m \cross m)}.
+                ]\right_{(m \cross m)}.
 $$
 
 ## Moving Kriging Interpolation
