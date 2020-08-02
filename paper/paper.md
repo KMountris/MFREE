@@ -139,7 +139,7 @@ $$
                 \mathbf{R}   & \mathbf{P}\\
                 \mathbf{P}^T & \mathbf{0}
                 \end{matrix}
-                \right]_{(m+n \cross m+n)},
+                ]\right_{(m+n \cross m+n)},
 $$
 
 where $\mathbf{P}$ is the polynomial basis moment matrix defined as in equation (\ref{eq:poly_moment}) and $\mathbf{R}$ is the radial basis function moment matrix:
