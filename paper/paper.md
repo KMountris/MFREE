@@ -52,7 +52,10 @@ For any real-valued function $u(\textbf{x})$ defined in a domain $\Omega \subset
     u^h(\textbf{x}_I) = \sum_{i=1}^m \phi_I^i u(\textbf{x}_i)
 \end{equation}
 
-where $\textbf{x}_I$ and $\textbf{x}_i$ are the coordinates vectors of the point $I$ and the $i^{th}$ point ($i=1,2,\dots,m$) in the support domain of point $I$ (being I one of these points). $\phi_I^i$ is the value of the meshfree approximation function $\textbf{\phi}_I$ at point $i$. In the following, we briefly describe the construction of $\textbf{\phi}_I$ in the Moving Least Squares, Radial Point Interpolation and Moving Kriging Interpolation schemes. The vector $\textbf{\phi}_I$ contains the values of the meshfree approximation function at all points $i$ in the support domain of point $I$.
+where $\textbf{x}_I$ and $\textbf{x}_i$ are the coordinates vectors of the point $I$ and the $i^{th}$ point ($i=1,2,\dots,m$) in the support domain of point $I$ (being I one of these
+points). $\phi_I^i$ is the value of the meshfree approximation function $\textbf{\phi}_I$ at point $i$. In the following, we briefly describe the construction of $\textbf{\phi}_I$ in
+the Moving Least Squares, Radial Point Interpolation and Moving Kriging Interpolation schemes. The vector $\textbf{\phi}_I$ contains the values of the meshfree approximation function
+at all points $i$ in the support domain of point $I$.
 
 ## Moving Least Squares
 
@@ -64,7 +67,8 @@ In the Moving Least Squares (MLS) scheme [@lancaster:1981], the meshfree approxi
 
 where the polynomial basis $\textbf{p}_I$ for point $I$ and matrices $\textbf{A}$ and $\textbf{B}$ are defined as follows. 
 
-For any point $i$ in the support domain of point $I$ with coordinates $\textbf{x}_i = \left( x_i, y_i \right)$ in 2D (analogously for 1D and 3D), the complete polynomial basis $\textbf{p}_i$ is given by:
+For any point $i$ in the support domain of point $I$ with coordinates $\textbf{x}_i = \left( x_i, y_i \right)$ in 2D (analogously for 1D and 3D), the complete polynomial basis 
+\textbf{p}_i$ is given by:
 
 \begin{equation} \label{eq:poly_basis}
    \textbf{p}_i = \left[ 1 \; x_i \; y_i \; x_i^2 \; x_i y_i \; y_i^2 \hdots \; x_i^k \; y_i^k \right].
@@ -154,9 +158,7 @@ where $\textbf{P}$ is the polynomial basis moment matrix defined as in equation 
 
 In the Moving Kriging Interpolation (MKI) scheme [@gu:2003], the meshfree approximation function $\textbf{\phi}$ at point $I$ is given by:
 
-\begin{equation}
-    \textbf{\phi}_I = \textbf{p}_I\textbf{A} + \textbf{c}_I\textbf{B} 
-\end{equation}
+$$\textbf{\phi}_I = \textbf{p}_I\textbf{A} + \textbf{c}_I\textbf{B}$$
 
 where $\textbf{p}_I$ is the polynomial basis as defined from equation (\ref{eq:poly_basis}). For any point $i$ in the support domain of point $I$, $\textbf{c}_I$ denotes the correlation function vector given by:
 
