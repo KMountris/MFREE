@@ -67,11 +67,11 @@ $$
 
 where the polynomial basis $\mathbf{p}_I$ for point $I$ and matrices $\mathbf{A}$ and $\mathbf{B}$ are defined as follows. 
 
-For any point $i$ in the support domain of point $I$ with coordinates $\mathbf{x}_i = \left( x_i, y_i \right)$ in 2D (analogously for 1D and 3D), the complete polynomial basis
+For any point $i$ in the support domain of point $I$ with coordinates $\mathbf{x}_i = \left( x_i, y_i )\right$ in 2D (analogously for 1D and 3D), the complete polynomial basis
 $\mathbf{p}_i$ is given by:
 
 \begin{equation} \label{eq:poly_basis}
-   \mathbf{p}_i = \left[ 1 \; x_i \; y_i \; x_i^2 \; x_i y_i \; y_i^2 \hdots \; x_i^k \; y_i^k \right].
+   \mathbf{p}_i = \left[ 1 \; x_i \; y_i \; x_i^2 \; x_i y_i \; y_i^2 \hdots \; x_i^k \; y_i^k ]\right.
 \end{equation}
 
 where $k$ is the maximal order of the monomials in $\mathbf{p}_i$. Let's denote the number of monomials in $\mathbf{p}_i$ by $n$, which depends on $k$ and on the spatial dimension (1D, 2D or 3D). For the linear polynomial basis, i.e. $k=1$, $\mathbf{p}_i$ is defined as:
@@ -101,7 +101,7 @@ where $\mathbf{P}$ is the polynomial basis moment matrix:
                 \hdots & \hdots & \hdots & \hdots & \hdots\\
                 1 & x_m & y_m & \hdots & p_k(\mathbf{x}_m)\\
                 \end{matrix}
-                \right]_{(m \cross n)},
+                ]\right_{(m \cross n)},
 \end{equation}
 
 $\mathbf{W}$ is the weight function moment matrix:
@@ -113,7 +113,7 @@ $$
                 \hdots & \hdots & \hdots & \hdots\\
                 w_{m1} & w_{m2} & \hdots & w_{mm}\\
                 \end{matrix}
-                \right]_{(m \cross m)}.
+                ]\right_{(m \cross m)}.
 $$
 
 ## Radial Point Interpolation 
@@ -127,7 +127,7 @@ $$
 where $\mathbf{p}_I$ is the polynomial basis as defined from equation (\ref{eq:poly_basis}). For any point $i$ in the support domain of point $I$, $\mathbf{r}_i$ denotes the radial basis function vector given by:
 
 $$
-    \mathbf{r}_i = \left[ r_{i1} \; r_{i2} \; \dotso \; r_{im} \right],
+    \mathbf{r}_i = \left[ r_{i1} \; r_{i2} \; \dotso \; r_{im} ]\right,
 $$
 
 where $r_{ij}$, $i,j= 1,2,\dots,m$, is the value of the radial basis function $r_i$ for point $i$ evaluated at point $j$, i.e. $r_{ij} = r_i(\mathbf{x}_j)$. For common choices of radial basis functions, see [@liu:2002].
@@ -163,7 +163,7 @@ $$\mathbf{\phi}_I = \mathbf{p}_I\mathbf{A} + \mathbf{c}_I\mathbf{B}$$
 where $\mathbf{p}_I$ is the polynomial basis as defined from equation (\ref{eq:poly_basis}). For any point $i$ in the support domain of point $I$, $\mathbf{c}_I$ denotes the correlation function vector given by:
 
 $$
-    \mathbf{c}_i = \left[ c_{i1} \; c_{i2} \; \dotso \; c_{im} \right]
+    \mathbf{c}_i = \left[ c_{i1} \; c_{i2} \; \dotso \; c_{im} ]\right
 $$
 
 where $c_{ij}$, $i,j=1,2,\dots,m$, is the value of the correlation function $c_i$ for point $i$ evaluated at point $j$, i.e. $c_{ij} = c_i(\mathbf{x}_j)$. For common choices of correlation functions, see [@gu:2003].
@@ -187,7 +187,7 @@ $$
                 \hdots & \hdots & \hdots & \hdots\\
                 c_{m1} & c_{m2} & \hdots & c_{mm}\\
                 \end{matrix}
-                \right]_{(m \cross m)}.
+                ]\right_{(m \cross m)}.
 $$
 
 # Program structure
