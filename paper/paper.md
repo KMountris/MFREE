@@ -101,7 +101,7 @@ where $\mathbf{P}$ is the polynomial basis moment matrix:
                 \hdots & \hdots & \hdots & \hdots & \hdots\\
                 1 & x_m & y_m & \hdots & p_k(\mathbf{x}_m)\\
                 \end{matrix}
-                ] _{(m \cross n)},
+                ],
 \end{equation}
 
 $\mathbf{W}$ is the weight function moment matrix:
@@ -113,7 +113,7 @@ $$
                 \hdots & \hdots & \hdots & \hdots\\
                 w_{m1} & w_{m2} & \hdots & w_{mm}\\
                 \end{matrix}
-                ] _{(m \cross m)}.
+                ].
 $$
 
 ## Radial Point Interpolation 
@@ -139,7 +139,7 @@ $$
                 \mathbf{R}   & \mathbf{P}\\
                 \mathbf{P}^T & \mathbf{0}
                 \end{matrix}
-                ] _{(m+n \cross m+n)},
+                ],
 $$
 
 where $\mathbf{P}$ is the polynomial basis moment matrix defined as in equation (\ref{eq:poly_moment}) and $\mathbf{R}$ is the radial basis function moment matrix:
@@ -151,7 +151,7 @@ $$
                 \hdots & \hdots & \hdots & \hdots\\
                 r_{m1} & r_{m2} & \hdots & r_{mm}\\
                 \end{matrix}
-                ] _{(m \cross m)}.
+                ].
 $$
 
 ## Moving Kriging Interpolation
@@ -187,7 +187,7 @@ $$
                 \hdots & \hdots & \hdots & \hdots\\
                 c_{m1} & c_{m2} & \hdots & c_{mm}\\
                 \end{matrix}
-                ]_{(m \cross m)}.
+                ].
 $$
 
 # Program structure
