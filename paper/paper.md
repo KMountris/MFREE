@@ -8,7 +8,7 @@ tags:
   - radial basis functions
   - moving kriking interpolation
 authors:
-  - name: Konstantinos A. Mountris^[corresponding author (kmountris@unizar.es)]
+  - name: Konstantinos A. Mountris^[corresponding author - %28kmountris@unizar.es%29]
     orcid: 0000-0003-2946-3044
     affiliation: 1
   - name: Esther Pueyo
