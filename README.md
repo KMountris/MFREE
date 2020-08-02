@@ -28,7 +28,7 @@ If this software is of any use for you please consider citing the following jour
 
 ## License
 
-This project is licensed under The MIT License - see the [LICENSE](https://github.com/KMountris/mfree/blob/master/LICENSE) file for details
+This project is licensed under The MIT License - see the [LICENSE.txt](https://github.com/KMountris/MFREE/blob/master/LICENSE.txt) file for details
 
 ## Donations
 
