@@ -53,7 +53,7 @@ $$
 $$
 
 where $\textbf{x}_I$ and $\textbf{x}_i$ are the coordinates vectors of the point $I$ and the $i^{th}$ point ($i=1,2,\dots,m$) in the support domain of point $I$ (being I one of these
-points). $\phi_I^i$ is the value of the meshfree approximation function $\textbf{\pho}_I$ at point $i$. In the following, we briefly describe the construction of $\textbf{\phi}_I$ in
+points). $\phi_I^i$ is the value of the meshfree approximation function $\mathbold{\pho}_I$ at point $i$. In the following, we briefly describe the construction of $\textbf{\phi}_I$ in
 the Moving Least Squares, Radial Point Interpolation and Moving Kriging Interpolation schemes. The vector $\textbf{\phi}_I$ contains the values of the meshfree approximation function
 at all points $i$ in the support domain of point $I$.
 
