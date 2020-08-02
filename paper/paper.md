@@ -46,63 +46,63 @@ implementation of meshfree packages that serves to support the integration of MM
 
 # Theoretical aspects
 
-For any real-valued function $u(\bm{x})$ defined in a domain $\Omega \subset \mathbb{R}^d$, a meshfree approximation $u^h(\bm{x})$ at a point $I \in \Omega$ is obtained by:
+For any real-valued function $u(\textbf{x})$ defined in a domain $\Omega \subset \mathbb{R}^d$, a meshfree approximation $u^h(\textbf{x})$ at a point $I \in \Omega$ is obtained by:
 
 \begin{equation}
-    u^h(\bm{x}_I) = \sum_{i=1}^m \phi_I^i u(\bm{x}_i)
+    u^h(\textbf{x}_I) = \sum_{i=1}^m \phi_I^i u(\textbf{x}_i)
 \end{equation}
 
-where $\bm{x}_I$ and $\bm{x}_i$ are the coordinates vectors of the point $I$ and the $i^{th}$ point ($i=1,2,\dots,m$) in the support domain of point $I$ (being I one of these points). $\phi_I^i$ is the value of the meshfree approximation function $\bm{\phi}_I$ at point $i$. In the following, we briefly describe the construction of $\bm{\phi}_I$ in the Moving Least Squares, Radial Point Interpolation and Moving Kriging Interpolation schemes. The vector $\bm{\phi}_I$ contains the values of the meshfree approximation function at all points $i$ in the support domain of point $I$.
+where $\textbf{x}_I$ and $\textbf{x}_i$ are the coordinates vectors of the point $I$ and the $i^{th}$ point ($i=1,2,\dots,m$) in the support domain of point $I$ (being I one of these points). $\phi_I^i$ is the value of the meshfree approximation function $\textbf{\phi}_I$ at point $i$. In the following, we briefly describe the construction of $\textbf{\phi}_I$ in the Moving Least Squares, Radial Point Interpolation and Moving Kriging Interpolation schemes. The vector $\textbf{\phi}_I$ contains the values of the meshfree approximation function at all points $i$ in the support domain of point $I$.
 
 ## Moving Least Squares
 
-In the Moving Least Squares (MLS) scheme [@lancaster:1981], the meshfree approximation function $\bm{\phi}_I$ for point $I$ is given by:
+In the Moving Least Squares (MLS) scheme [@lancaster:1981], the meshfree approximation function $\textbf{\phi}_I$ for point $I$ is given by:
 
 \begin{equation}
-    \bm{\phi}_I = \bm{p}_I \bm{A}^{-1} \bm{B},
+    \textbf{\phi}_I = \textbf{p}_I \textbf{A}^{-1} \textbf{B},
 \end{equation}
 
-where the polynomial basis $\bm{p}_I$ for point $I$ and matrices $\bm{A}$ and $\bm{B}$ are defined as follows. 
+where the polynomial basis $\textbf{p}_I$ for point $I$ and matrices $\textbf{A}$ and $\textbf{B}$ are defined as follows. 
 
-For any point $i$ in the support domain of point $I$ with coordinates $\bm{x}_i = \left( x_i, y_i \right)$ in 2D (analogously for 1D and 3D), the complete polynomial basis $\bm{p}_i$ is given by:
+For any point $i$ in the support domain of point $I$ with coordinates $\textbf{x}_i = \left( x_i, y_i \right)$ in 2D (analogously for 1D and 3D), the complete polynomial basis $\textbf{p}_i$ is given by:
 
 \begin{equation} \label{eq:poly_basis}
-   \bm{p}_i = \left[ 1 \; x_i \; y_i \; x_i^2 \; x_i y_i \; y_i^2 \hdots \; x_i^k \; y_i^k \right].
+   \textbf{p}_i = \left[ 1 \; x_i \; y_i \; x_i^2 \; x_i y_i \; y_i^2 \hdots \; x_i^k \; y_i^k \right].
 \end{equation}
 
-where $k$ is the maximal order of the monomials in $\bm{p}_i$. Let's denote the number of monomials in $\bm{p}_i$ by $n$, which depends on $k$ and on the spatial dimension (1D, 2D or 3D). For the linear polynomial basis, i.e. $k=1$, $\bm{p}_i$ is defined as:
+where $k$ is the maximal order of the monomials in $\textbf{p}_i$. Let's denote the number of monomials in $\textbf{p}_i$ by $n$, which depends on $k$ and on the spatial dimension (1D, 2D or 3D). For the linear polynomial basis, i.e. $k=1$, $\textbf{p}_i$ is defined as:
 
 \begin{equation}
 \begin{array}{ll}
-    \bm{p}_i = [1 \; x_i], &(n=2) \textrm{ in 1D}, \\
-    \bm{p}_i = [1 \; x_i \; y_i], &(n=3) \textrm{ in 2D}, \\
-    \bm{p}_i = [1 \; x_i \; y_i \; z_i], &(n=4) \textrm{ in 3D}. \\
+    \textbf{p}_i = [1 \; x_i], &(n=2) \textrm{ in 1D}, \\
+    \textbf{p}_i = [1 \; x_i \; y_i], &(n=3) \textrm{ in 2D}, \\
+    \textbf{p}_i = [1 \; x_i \; y_i \; z_i], &(n=4) \textrm{ in 3D}. \\
 \end{array}
 \end{equation}
 
-The matrices $\bm{A}$ and $\bm{B}$ are given by:
+The matrices $\textbf{A}$ and $\textbf{B}$ are given by:
 \begin{equation}
 \begin{array}{ll}
-    \bm{A} &= \bm{P}^T\bm{W}\bm{P}, \\
-    \bm{B} &= \bm{P}^T\bm{W},
+    \textbf{A} &= \textbf{P}^T\textbf{W}\textbf{P}, \\
+    \textbf{B} &= \textbf{P}^T\textbf{W},
 \end{array}
 \end{equation}
 
-where $\bm{P}$ is the polynomial basis moment matrix:
+where $\textbf{P}$ is the polynomial basis moment matrix:
 \begin{equation} \label{eq:poly_moment}
-    \bm{P} = \left[
+    \textbf{P} = \left[
              \begin{matrix}
-                1 & x_1 & y_1 & \hdots & p_k(\bm{x}_1)\\
-                1 & x_2 & y_2 & \hdots & p_k(\bm{x}_2)\\
+                1 & x_1 & y_1 & \hdots & p_k(\textbf{x}_1)\\
+                1 & x_2 & y_2 & \hdots & p_k(\textbf{x}_2)\\
                 \hdots & \hdots & \hdots & \hdots & \hdots\\
-                1 & x_m & y_m & \hdots & p_k(\bm{x}_m)\\
+                1 & x_m & y_m & \hdots & p_k(\textbf{x}_m)\\
                 \end{matrix}
                 \right]_{(m \cross n)},
 \end{equation}
 
-$\bm{W}$ is the weight function moment matrix:
+$\textbf{W}$ is the weight function moment matrix:
 \begin{equation}
-    \bm{W} = \left[
+    \textbf{W} = \left[
              \begin{matrix}
                 w_{11} & w_{12} & \hdots & w_{1m}\\
                 w_{21} & w_{22} & \hdots & w_{2m}\\
@@ -114,33 +114,33 @@ $\bm{W}$ is the weight function moment matrix:
 
 ## Radial Point Interpolation 
 
-In the Radial Point Interpolation (RPI) scheme [@liu:2002], the meshfree approximation function $\bm{\phi}_I$ for point $I$ is given by:
+In the Radial Point Interpolation (RPI) scheme [@liu:2002], the meshfree approximation function $\textbf{\phi}_I$ for point $I$ is given by:
 
 \begin{equation}
-    \bm{\phi}_I = \{ \bm{r}_I \; \; \bm{p}_I\} \bm{G}^{-1},
+    \textbf{\phi}_I = \{ \textbf{r}_I \; \; \textbf{p}_I\} \textbf{G}^{-1},
 \end{equation}
 
-where $\bm{p}_I$ is the polynomial basis as defined from equation (\ref{eq:poly_basis}). For any point $i$ in the support domain of point $I$, $\bm{r}_i$ denotes the radial basis function vector given by:
+where $\textbf{p}_I$ is the polynomial basis as defined from equation (\ref{eq:poly_basis}). For any point $i$ in the support domain of point $I$, $\textbf{r}_i$ denotes the radial basis function vector given by:
 
 \begin{equation}
-    \bm{r}_i = \left[ r_{i1} \; r_{i2} \; \dotso \; r_{im} \right],
+    \textbf{r}_i = \left[ r_{i1} \; r_{i2} \; \dotso \; r_{im} \right],
 \end{equation}
 
-where $r_{ij}$, $i,j= 1,2,\dots,m$, is the value of the radial basis function $r_i$ for point $i$ evaluated at point $j$, i.e. $r_{ij} = r_i(\bm{x}_j)$. For common choices of radial basis functions, see [@liu:2002].
+where $r_{ij}$, $i,j= 1,2,\dots,m$, is the value of the radial basis function $r_i$ for point $i$ evaluated at point $j$, i.e. $r_{ij} = r_i(\textbf{x}_j)$. For common choices of radial basis functions, see [@liu:2002].
 
-The matrix $\bm{G}$ is given by:
+The matrix $\textbf{G}$ is given by:
 \begin{equation}
-    \bm{G} = \left[
+    \textbf{G} = \left[
              \begin{matrix}
-                \bm{R}   & \bm{P}\\
-                \bm{P}^T & \bm{0}
+                \textbf{R}   & \textbf{P}\\
+                \textbf{P}^T & \textbf{0}
                 \end{matrix}
                 \right]_{(m+n \cross m+n)},
 \end{equation}
 
-where $\bm{P}$ is the polynomial basis moment matrix defined as in equation (\ref{eq:poly_moment}) and $\bm{R}$ is the radial basis function moment matrix:
+where $\textbf{P}$ is the polynomial basis moment matrix defined as in equation (\ref{eq:poly_moment}) and $\textbf{R}$ is the radial basis function moment matrix:
 \begin{equation}
-    \bm{R} = \left[
+    \textbf{R} = \left[
              \begin{matrix}
                 r_{11} & r_{12} & \hdots & r_{1m}\\
                 r_{21} & r_{22} & \hdots & r_{2m}\\
@@ -152,33 +152,33 @@ where $\bm{P}$ is the polynomial basis moment matrix defined as in equation (\re
 
 ## Moving Kriging Interpolation
 
-In the Moving Kriging Interpolation (MKI) scheme [@gu:2003], the meshfree approximation function $\bm{\phi}$ at point $I$ is given by:
+In the Moving Kriging Interpolation (MKI) scheme [@gu:2003], the meshfree approximation function $\textbf{\phi}$ at point $I$ is given by:
 
 \begin{equation}
-    \bm{\phi}_I = \bm{p}_I\bm{A} + \bm{c}_I\bm{B} 
+    \textbf{\phi}_I = \textbf{p}_I\textbf{A} + \textbf{c}_I\textbf{B} 
 \end{equation}
 
-where $\bm{p}_I$ is the polynomial basis as defined from equation (\ref{eq:poly_basis}). For any point $i$ in the support domain of point $I$, $\bm{c}_I$ denotes the correlation function vector given by:
+where $\textbf{p}_I$ is the polynomial basis as defined from equation (\ref{eq:poly_basis}). For any point $i$ in the support domain of point $I$, $\textbf{c}_I$ denotes the correlation function vector given by:
 
 \begin{equation}
-    \bm{c}_i = \left[ c_{i1} \; c_{i2} \; \dotso \; c_{im} \right]
+    \textbf{c}_i = \left[ c_{i1} \; c_{i2} \; \dotso \; c_{im} \right]
 \end{equation}
 
-where $c_{ij}$, $i,j=1,2,\dots,m$, is the value of the correlation function $c_i$ for point $i$ evaluated at point $j$, i.e. $c_{ij} = c_i(\bm{x}_j)$. For common choices of correlation functions, see [@gu:2003].
+where $c_{ij}$, $i,j=1,2,\dots,m$, is the value of the correlation function $c_i$ for point $i$ evaluated at point $j$, i.e. $c_{ij} = c_i(\textbf{x}_j)$. For common choices of correlation functions, see [@gu:2003].
 
-The matrices $\bm{A}$ and $\bm{B}$ are obtained by:
+The matrices $\textbf{A}$ and $\textbf{B}$ are obtained by:
 
 \begin{align}
 \begin{split}
-    \bm{A} &= (\bm{P}^T\bm{C}^{-1}\bm{P})^{-1} \bm{P}^T \bm{C}^{-1} \\
-    \bm{B} &= \bm{C}^{-1}(\bm{I} - \bm{P}\bm{A})
+    \textbf{A} &= (\textbf{P}^T\textbf{C}^{-1}\textbf{P})^{-1} \textbf{P}^T \textbf{C}^{-1} \\
+    \textbf{B} &= \textbf{C}^{-1}(\textbf{I} - \textbf{P}\textbf{A})
 \end{split}
 \end{align}
 
-where $\bm{I}$ is the identity matrix, $\bm{P}$ is the polynomial basis moment matrix defined as in equation (\ref{eq:poly_moment}) and $\bm{C}$ is the correlation function moment matrix:
+where $\textbf{I}$ is the identity matrix, $\textbf{P}$ is the polynomial basis moment matrix defined as in equation (\ref{eq:poly_moment}) and $\textbf{C}$ is the correlation function moment matrix:
 
 \begin{equation}
-    \bm{C} = \left[
+    \textbf{C} = \left[
              \begin{matrix}
                 c_{11} & c_{12} & \hdots & c_{1m}\\
                 c_{21} & c_{22} & \hdots & c_{2m}\\
@@ -214,7 +214,7 @@ The subfolder *textprogressbar* contains the program **Paul (2020). Text progres
 
 ## weights
 
-The subfolder *weights* contains the implementation of various weight functions, radial basis functions and correlation functions that are used for the computation of $\bm{W}$, $\bm{R}$ and $\bm{C}$ matrices in the MLS, RPI and MKI schemes, respectively. The available functions are: cubic spline (*CubicSpline.m*), quartic spline (*QuarticSpline.m*), Gaussian function (*Gaussian.m*), multiquadric radial basis function (*Multiquadric.m*), compact-support radial basis function (*CompactRBF.m*), thin plate spline (*ThinPlateSpline.m*).
+The subfolder *weights* contains the implementation of various weight functions, radial basis functions and correlation functions that are used for the computation of $\textbf{W}$, $\textbf{R}$ and $\textbf{C}$ matrices in the MLS, RPI and MKI schemes, respectively. The available functions are: cubic spline (*CubicSpline.m*), quartic spline (*QuarticSpline.m*), Gaussian function (*Gaussian.m*), multiquadric radial basis function (*Multiquadric.m*), compact-support radial basis function (*CompactRBF.m*), thin plate spline (*ThinPlateSpline.m*).
 
 # Examples
 
